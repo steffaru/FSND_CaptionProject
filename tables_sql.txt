@@ -1,0 +1,68 @@
+CREATE TABLE plants (id serial PRIMARY KEY,name varchar(40) NOT NULL, scientific_name varchar(40) NOT NULL, date_prod date, is_poisonous varchar(10),
+primary_color interval hour to minute);
+
+CREATE TABLE movies (id serial PRIMARY KEY,title varchar(60) NOT NULL,release_date date NOT NULL);
+
+CREATE TABLE actors ( id serial PRIMARY KEY, name varchar(40) NOT NULL, age integer(2) NOT NULL, gender varchar(1));
+
+
+
+
+
+
+
+INSERT INTO movies (title, release_date) VALUES ('The Leisure Seeker', '2017-09-03'),('Eternal Sunshine of the Spotless Mind', '2004-07-08'),('The Fundamentals of Caring', '2016-01-29');
+
+
+INSERT INTO movies (title, release_date) VALUES ('A Quiet Place Part II', '2021-08-03'),('Cruella', '2021-07-01'),('7th Heaven', '1927-05-06'),('102 Dalmatians', '2000-11-22'),('28 Days', '2000-04-14'),('Across the Line', '2000-02-01'),('American Psycho', '2000-01-21'),('The Gift ', '2000-12-22'),('Loser', '2001-07-21'),('Black Widow 2', '2022-07-30');
+
+
+
+INSERT INTO actors (name, age, gender) VALUES 
+('Robert De Niro', 77, 'M'),
+('Jack Nicholson', 84, 'M'),
+('Meryl Streep', 72, 'F'),
+('Tom Hanks', 65, 'M'),
+('Elizabeth Taylor', 79, 'F'),
+('Leonardo DiCaprio', 47, 'M'),
+('Cate Blanchett', 52, 'F'),
+('Kate Winslet', 46, 'F'),
+('Viola Davis', 56, 'F'),
+('Sophia Loren', 87, 'F'),
+('Diane Keaton', 65, 'F'),
+('Julia Roberts', 54, 'F'),
+('Jodie Foster', 59, 'F'),
+('Morgan Freeman', 84, 'M'),
+('Helen Mirren', 76, 'F'),
+('Angela Bassett', 61, 'F'),
+('Johnny Depp', 58, 'M');
+
+
+
+export FLASK_APP=app
+export FLASK_ENV=development
+python app.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export FLASK_APP=flaskr
+export FLASK_ENV=development
