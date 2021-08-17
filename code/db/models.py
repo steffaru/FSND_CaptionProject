@@ -27,7 +27,7 @@ class Movie(db.Model):
     __tablename__ = 'movies'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String)
+    title = Column(String, nullable=False)
     release_date = Column(Date)
 
     def __init__(self, title, release_date):
@@ -60,8 +60,8 @@ class Actor(db.Model):
     __tablename__ = 'actors'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    age = Column(Integer)
+    name = Column(String, nullable=False)
+    age = Column(Integer, nullable=False)
     gender = Column(String)
 
     def __init__(self, name, age, gender):
