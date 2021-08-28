@@ -22,6 +22,7 @@ class CapstoneTestCase(unittest.TestCase):
             'localhost:5432',
             self.database_name)
         setup_db(self.app)
+        self.header = {'Content-Type': 'application/json', 'Authorization': "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMDEwNjg3OSwiZXhwIjoxNjMwMTkzMjc5LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.mO9TEjhZCTZ_BOFFT2q-td8f4JUEI22QiM-Izo2LK-l5wuFNQ8SZgJIsmBl2xTCH7yPWjV2QFrjAkyX49GN3yyO6ciBTZPKUg5LLYEgJR5xMZjWLLdT0S1NBH1OOe0BzqxfDtxUxcajcjXiNbwkxUIJ6gE-vOue0n1n7BSqAqKxryge-UYMy9Ez5kjGm3VOrmOOH0bRsvq7jBNC8WqlPgoMVpsCdyNMgNpgEgQ86EYCiLLWZ4Ctst5yXlj2xgFBqJlJiXx1vUMgvfBUFGf2ukMd068RL6U5PG2AfBrsfepr74CcmA2eFAeCsaeWoSPiA-sKXmpyvlKkv1wCDmlLODg"}
 
         # binds the app to the current context
         with self.app.app_context():
@@ -35,84 +36,84 @@ class CapstoneTestCase(unittest.TestCase):
         pass
 
     #GET MOVIES
-    # def test_get_movies(self):
-    #     res = self.client().get('/api/movies')
-    #     data = json.loads(res.data)
+    def test_get_movies(self):
+        res = self.client().get('http://localhost:5000/api/movies', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(data['movies']))
-    #     self.assertTrue(data['total_movies'])
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(data['movies']))
+        self.assertTrue(data['total_movies'])
 
-    # def test_404_if_movies_doesnt_exist(self):
-    #     res = self.client().get('http://localhost:5000/api/movies')
-    #     data = json.loads(res.data)
+    def test_404_if_movies_doesnt_exist(self):
+        res = self.client().get('http://localhost:5000/api/moviss', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 404)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(res.status_code, 404)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'resource not found')
 
     # #POST MOVIE
-    # def test_post_new_movie(self):
-    #     res = self.client().post(
-    #         'http://localhost:5000/api/movies/create',
-    #         json={
-    #             'title': 'The Married',
-    #             'release_date': '2018-10-01'
-    #             },
-    #         headers={'Content-Type': 'application/json'})
-    #     movies = Movie.query.all()
-    #     data = json.loads(res.data)
+    def test_post_new_movie(self):
+        res = self.client().post(
+            'http://localhost:5000/api/movies/create',
+            json={
+                'title': 'Ocean Eyes',
+                'release_date': '2018-10-01'
+                },
+            headers=self.header)
+        movies = Movie.query.all()
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(movies))
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(movies))
     
-    # def test_422_if_new_movie_is_unprocessable(self):
-    #     res = self.client().post(
-    #         'http://localhost:5000/api/movies/create',
-    #         json={},
-    #         headers={'Content-Type': 'application/json'})
-    #     data = json.loads(res.data)
+    def test_422_if_new_movie_is_unprocessable(self):
+        res = self.client().post(
+            'http://localhost:5000/api/movies/create',
+            json={'title': ""},
+            headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'unprocessable')
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
-    # #DELETE MOVIES
-    # def test_delete_movie(self):
-    #     res = self.client().delete('http://localhost:5000/api/movies/15')
-    #     data = json.loads(res.data)
+    #DELETE MOVIES
+    def test_delete_movie(self):
+        res = self.client().delete('http://localhost:5000/api/movies/43', headers=self.header)
+        data = json.loads(res.data)
 
-    #     movie = Movie.query.filter(Movie.id == 15).one_or_none()
+        movie = Movie.query.filter(Movie.id == 43).one_or_none()
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertEqual(movie, None)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(movie, None)
 
-    # def test_404_if_movie_delete_doesnt_exist(self):
-    #     res = self.client().delete('http://localhost:5000/api/movies/1000')
-    #     data = json.loads(res.data)
+    def test_404_if_movie_delete_doesnt_exist(self):
+        res = self.client().delete('http://localhost:5000/api/movies/1000', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 404)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(res.status_code, 404)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'resource not found')
 
-    # #PATCH MOVIES
-    # def test_patch_movie(self):  
-    #     res = self.client().patch(
-    #         'http://localhost:5000/api/movies/10',
-    #         json={
-    #             'title': 'The Engagement is bad',
-    #             'release_date': '2021-01-01'
-    #             },
-    #         headers={'Content-Type': 'application/json'})
-    #     movies = Movie.query.all()
-    #     data = json.loads(res.data)
+    #PATCH MOVIES
+    def test_patch_movie(self):  
+        res = self.client().patch(
+            'http://localhost:5000/api/movies/11',
+            json={
+                'title': 'The Gifteddddddddddddddd',
+                'release_date': '2000-02-01'
+                },
+            headers=self.header)
+        movies = Movie.query.all()
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(movies))
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(movies))
 
     def test_404_if_movie_patch_doesnt_exist(self):
         res = self.client().patch(
@@ -121,7 +122,7 @@ class CapstoneTestCase(unittest.TestCase):
                 'title': '',
                 'release_date':''
                 },
-            headers={'Content-Type': 'application/json'})
+            headers=self.header)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 404)
@@ -130,9 +131,9 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_422_if_patch_movie_is_unprocessable(self):
         res = self.client().patch(
-            'http://localhost:5000/api/movies/8',
-            json={},
-            headers={'Content-Type': 'application/json'})
+            'http://localhost:5000/api/movies/6',
+            json={'title': ""},
+            headers=self.header)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -140,112 +141,112 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'unprocessable')
 
     # #GET ACTORS
-    # def test_get_actors(self):
-    #     res = self.client().get('/api/actors')
-    #     data = json.loads(res.data)
+    def test_get_actors(self):
+        res = self.client().get('/api/actors', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(data['actors']))
-    #     self.assertTrue(data['total_actors'])
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(data['actors']))
+        self.assertTrue(data['total_actors'])
 
-    # def test_404_if_actors_doesnt_exist(self):
-    #     res = self.client().get('http://localhost:5000/api/actors')
-    #     data = json.loads(res.data)
+    def test_404_if_actors_doesnt_exist(self):
+        res = self.client().get('http://localhost:5000/api/actores', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 404)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(res.status_code, 404)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'resource not found')
 
     # #POST ACTOR
-    # def test_post_new_actor(self):
-    #     res = self.client().post(
-    #         'http://localhost:5000/api/actors/create',
-    #         json={
-    #             'name': 'John Cena',
-    #             'age': 44,
-    #             'gender': 'M'
-    #             },
-    #         headers={'Content-Type': 'application/json'})
-    #     actors = Movie.query.all()
-    #     data = json.loads(res.data)
+    def test_post_new_actor(self):
+        res = self.client().post(
+            'http://localhost:5000/api/actors/create',
+            json={
+                'name': 'Viola Davis',
+                'age': 51,
+                'gender': 'F'
+                },
+            headers=self.header)
+        actors = Movie.query.all()
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(actors))
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(actors))
     
-    # def test_422_if_new_actor_is_unprocessable(self):
-    #     res = self.client().post(
-    #         'http://localhost:5000/api/actors/create',
-    #         json={},
-    #         headers={'Content-Type': 'application/json'})
-    #     data = json.loads(res.data)
+    def test_422_if_new_actor_is_unprocessable(self):
+        res = self.client().post(
+            'http://localhost:5000/api/actors/create',
+            json={},
+            headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'unprocessable')
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
-    # #DELETE ACTOR
-    # def test_delete_actor(self):
-    #     res = self.client().delete('http://localhost:5000/api/actors/15')
-    #     data = json.loads(res.data)
+    #DELETE ACTOR
+    def test_delete_actor(self):
+        res = self.client().delete('http://localhost:5000/api/actors/88', headers=self.header)
+        data = json.loads(res.data)
 
-    #     actor = Actor.query.filter(Actor.id == 1).one_or_none()
+        actor = Actor.query.filter(Actor.id == 88).one_or_none()
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertEqual(actor, None)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(actor, None)
 
-    # def test_404_if_actor_delete_doesnt_exist(self):
-    #     res = self.client().delete('http://localhost:5000/api/actors/10000')
-    #     data = json.loads(res.data)
+    def test_404_if_actor_delete_doesnt_exist(self):
+        res = self.client().delete('http://localhost:5000/api/actors/10000', headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 404)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(res.status_code, 404)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'resource not found')
 
-    # #PATCH ACTOR
-    # def test_patch_actor(self):  
-    #     res = self.client().patch(
-    #         'http://localhost:5000/api/actors/28',
-    #         json={
-    #             'name': 'Michael Cera or Cena',
-    #             'age': 33,
-    #             'gender': 'M'
-    #             },
-    #         headers={'Content-Type': 'application/json'})
-    #     actors = Actor.query.all()
-    #     data = json.loads(res.data)
+    #PATCH ACTOR
+    def test_patch_actor(self):  
+        res = self.client().patch(
+            'http://localhost:5000/api/actors/19',
+            json={
+                'name': 'Steve Carrell',
+                'age': 58,
+                'gender': 'M'
+                },
+            headers=self.header)
+        actors = Actor.query.all()
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
-    #     self.assertTrue(len(actors))
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(actors))
 
-    # def test_404_if_actor_patch_doesnt_exist(self):
-    #     res = self.client().patch(
-    #         'http://localhost:5000/api/actors/8000',
-    #         json={
-    #             'name': 'pepe grillo',
-    #             'age': '',
-    #             'gender': ''
-    #             },
-    #         headers={'Content-Type': 'application/json'})
-    #     data = json.loads(res.data)
+    def test_404_if_actor_patch_doesnt_exist(self):
+        res = self.client().patch(
+            'http://localhost:5000/api/actors/8000',
+            json={
+                'name': 'pepe grillo',
+                'age': '',
+                'gender': ''
+                },
+            headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 404)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(res.status_code, 404)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'resource not found')
 
-    # def test_422_if_patch_actor_is_unprocessable(self):
-    #     res = self.client().patch(
-    #         'http://localhost:5000/api/actors/8',
-    #         json={},
-    #         headers={'Content-Type': 'application/json'})
-    #     data = json.loads(res.data)
+    def test_422_if_patch_actor_is_unprocessable(self):
+        res = self.client().patch(
+            'http://localhost:5000/api/actors/8',
+            json={},
+            headers=self.header)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'unprocessable')
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
 # Make the tests conveniently executable
 if __name__ == "__main__":

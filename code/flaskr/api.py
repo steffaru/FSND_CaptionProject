@@ -23,13 +23,13 @@ def create_app():
         return response
     
     @app.route('/api/movies', methods=['GET'])
-    # @requires_auth('get:movies')
-    def get_movies():
+    @requires_auth('get:movies')
+    def get_movies(f):
         code = 200
         try:
-        #     if f is None:
-        #         code = 401
-        #         abort(code)
+            if f is None:
+                code = 401
+                abort(code)
 
             movies = Movie.query.all()
             formatted_movies = [movie.format() for movie in movies]
@@ -48,13 +48,13 @@ def create_app():
             abort(code)
 
     @app.route('/api/movies/create', methods=['POST'])
-    # @requires_auth('post:movie')
+    @requires_auth('post:movie')
     def create_movie(f):
         code = 200
         try:
-            # if f is None:
-            #     code = 401
-            #     abort(code)
+            if f is None:
+                code = 401
+                abort(code)
 
             req = request.get_json()
             new_title = req.get('title', None)
@@ -62,7 +62,7 @@ def create_app():
             new_release_date = datetime.strptime(new_release_date, '%Y-%m-%d')
             print(new_title)
             if new_title == "":
-                code = 404
+                code = 422
                 abort(code)            
 
             movie = Movie(
@@ -80,17 +80,17 @@ def create_app():
             abort(code)
 
     @app.route('/api/movies/<int:movie_id>', methods=['PATCH'])
-    #@requires_auth('patch:movie')
-    def update_movie(movie_id):
+    @requires_auth('patch:movie')
+    def update_movie(f, movie_id):
         code = 422
         movie = Movie.query.filter_by(id=movie_id).first()
         if movie is None:
             code = 404
             abort(code)
         try:
-            # if f is None:
-            #     code = 401
-            #     abort(code)
+            if f is None:
+                code = 401
+                abort(code)
             req = request.get_json()
             new_title = req.get('title', None)
             new_release= req.get('release_date', None)
@@ -114,11 +114,11 @@ def create_app():
             abort(code)
 
     @app.route('/api/movies/<int:movie_id>', methods=['DELETE'])
-    #@requires_auth('delete:movie')
-    def delete_movie(movie_id):
-        # if f is None:
-        #     code = 401
-        #     abort(code)
+    @requires_auth('delete:movie')
+    def delete_movie(f, movie_id):
+        if f is None:
+            code = 401
+            abort(code)
 
         movie = Movie.query.filter_by(id=movie_id).first()
         if movie is None:
