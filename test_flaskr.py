@@ -4,8 +4,8 @@ import json
 from functools import wraps
 from flask_sqlalchemy import SQLAlchemy
 
-from flaskr.api import create_app
-from db.models import setup_db, Movie, Actor
+from app import create_app
+from models import setup_db, Movie, Actor
 
 
 class CapstoneTestCase(unittest.TestCase):

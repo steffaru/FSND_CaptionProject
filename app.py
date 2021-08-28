@@ -5,7 +5,7 @@ import json
 from flask_cors import CORS
 from datetime import datetime
 from sqlalchemy import func
-from db.models import setup_db, Movie, Actor
+from models import setup_db, Movie, Actor
 from auth.auth import AuthError, requires_auth
 from werkzeug.datastructures import ImmutableMultiDict
 

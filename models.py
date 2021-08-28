@@ -1,12 +1,14 @@
 import os
 from sqlalchemy import Column, String, Integer, Date
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import json
 
 database_name = "capstone"
 database_path = "postgres://{}:{}@{}/{}".format('postgres', '123456', 'localhost:5432', database_name)
 
 db = SQLAlchemy()
+
 
 '''
 setup_db(app)
@@ -18,6 +20,7 @@ def setup_db(app):
     db.app = app
     db.init_app(app)
     db.create_all()
+    migrate = Migrate(app, db)
 
 '''
 Movie
