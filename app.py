@@ -22,7 +22,7 @@ def create_app():
         response.headers.add('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,PATCH,OPTIONS')
         return response
     
-    @app.route('/api/live', methods=['GET'])
+    @app.route('/', methods=['GET'])
     def is_alive():
         return jsonify({
             'code': 200,
