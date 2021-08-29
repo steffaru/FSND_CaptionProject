@@ -10,7 +10,7 @@ from auth.auth import AuthError, requires_auth
 from werkzeug.datastructures import ImmutableMultiDict
 
 
-def create_app():
+def create_app(a, b):
     app = Flask(__name__)
     setup_db(app)
     CORS(app)
