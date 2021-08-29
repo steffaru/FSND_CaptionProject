@@ -6,12 +6,7 @@ import json
 
 database_path = os.getenv('DATABASE_URL')
 
-if database_path is None:
-    database_name = "capstone"
-    database_path = "postgres://{}:{}@{}/{}".format('postgres', '123456', 'localhost:5432', database_name)
-
 db = SQLAlchemy()
-
 
 '''
 setup_db(app)
