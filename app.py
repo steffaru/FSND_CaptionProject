@@ -10,7 +10,7 @@ from auth.auth import AuthError, requires_auth
 from werkzeug.datastructures import ImmutableMultiDict
 
 
-def create_app():
+def create_app(configName = 'default'):
     app = Flask(__name__)
     setup_db(app)
     CORS(app)
@@ -29,7 +29,7 @@ def create_app():
             'success': True,
             'message': "Ok"
         })
-            
+
     @app.route('/api/movies', methods=['GET'])
     @requires_auth('get:movies')
     def get_movies(f):
@@ -308,3 +308,5 @@ def create_app():
         return response
     
     return app
+
+app = create_app()
