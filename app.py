@@ -23,7 +23,7 @@ def create_app():
         return response
     
     @app.route('/api/live', methods=['GET'])
-    def get_movies():
+    def is_alive():
         return jsonify({
             'code': 200,
             'success': True,
