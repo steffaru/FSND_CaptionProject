@@ -22,6 +22,14 @@ def create_app():
         response.headers.add('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,PATCH,OPTIONS')
         return response
     
+    @app.route('/api/live', methods=['GET'])
+    def get_movies():
+        return jsonify({
+            'code': 200,
+            'success': True,
+            'message': "Ok"
+        })
+            
     @app.route('/api/movies', methods=['GET'])
     @requires_auth('get:movies')
     def get_movies(f):
