@@ -76,6 +76,15 @@ def seed():
             "title": "The Gift"
         }
     ]
+    for item in movies:
+        movie = Movie.query.filter_by(title=item['title']).first()
+        if movie is None:
+            movie = Movie(
+                    title=item['title'],
+                    release_date=item['release_date']
+                )
+            movie.insert()
+
     actors = [
         {
             "age": 77,
@@ -172,14 +181,15 @@ def seed():
             "name": "Viola Davis"
         }
     ]
-    for item in movies:
-        movie = Movie.query.filter_by(title=item['title']).first()
-        if movie is None:
-            movie = Movie(
-                    title=item['title'],
-                    release_date=item['release_date']
+    for item in actors:
+        actor = Actor.query.filter_by(name=item['name']).first()
+        if actor is None:
+            actor = Actor(
+                    age=item['age'],
+                    gender=item['gender'],
+                    name=item['name'],
                 )
-            movie.insert()    
+            actor.insert()  
 
 '''
 Movie
