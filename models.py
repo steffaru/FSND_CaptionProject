@@ -40,7 +40,136 @@ def seed():
             "release_date": "2019-10-01"},
         {
             "title":"Scarlet Witch",
-            "release_date": "2021-10-01"
+            "release_date": "2021-10-01"},
+        {
+            "release_date": "2017-09-03",
+            "title": "The Leisure Seeker"},
+        {
+            "release_date": "-2004-08-07",
+            "title": "Eternal Sunshine of the Spotless Mind"},
+        {
+            "release_date": "2016-01-29",
+            "title": "The Fundamentals of Caring"},
+        {
+            "release_date": "2021-08-03",
+            "title": "A Quiet Place Part II"},
+        {
+            "release_date": "2021-08-30",
+            "title": "Cruella"},
+        {
+            "release_date": "1927-05-06",
+            "title": "7th Heaven"},
+        { 
+            "release_date": "2000-11-22",
+            "title": "102 Dalmatians"},
+        {
+            "release_date": "2000-04-14",
+            "title": "28 Days"},
+        {
+            "release_date": "2000-01-02",
+            "title": "Across the Line"},
+        {
+            "release_date": "2018-10-18",
+            "title": "Ocean Eleven"},
+        {
+            "release_date": "2000-02-01",
+            "title": "The Gift"
+        }
+    ]
+    actors = [
+        {
+            "age": 77,
+            "gender": "M",
+            "name": "Robert De Niro"},
+        {
+            "age": 84,
+            "gender": "M",
+            "name": "Jack Nicholson"},
+        {
+            "age": 72,
+            "gender": "F",
+            "name": "Meryl Streep"},
+        {
+            "age": 65,
+            "gender": "M",
+            "name": "Tom Hanks"},
+        {
+            "age": 79,
+            "gender": "F",
+            "name": "Elizabeth Taylor"},
+        {
+            "age": 47,
+            "gender": "M",
+            "name": "Leonardo DiCaprio"},
+        {
+            "age": 52,
+            "gender": "F",
+            "name": "Cate Blanchett"},
+        {
+            "age": 46,
+            "gender": "F",
+            "name": "Kate Winslet"},
+        {
+            "age": 56,
+            "gender": "F",
+            "name": "Viola Davis"},
+        {
+            "age": 87,
+            "gender": "F",
+            "name": "Sophia Loren"},
+        {
+            "age": 65,
+            "gender": "F",
+            "name": "Diane Keaton"},
+        {
+            "age": 54,
+            "gender": "F",
+            "name": "Julia Roberts"},
+        {
+            "age": 59,
+            "gender": "F",
+            "name": "Jodie Foster"},
+        {
+            "age": 84,
+            "gender": "M",
+            "name": "Morgan Freeman"},
+        {
+            "age": 76,
+            "gender": "F",
+            "name": "Helen Mirren"},
+        {
+            "age": 61,
+            "gender": "F",
+            "name": "Angela Bassett"},
+        {
+            "age": 58,
+            "gender": "M",
+            "name": "Johnny Depp"},
+        {
+            "age": 33,
+            "gender": "M",
+            "name": "Michael Ceraaaaaaaaa"
+        },
+        {
+            "age": 44,
+            "gender": "M",
+            "name": "John Cena"},
+        {
+            "age": 50,
+            "gender": "M",
+            "name": "Robbie Williams"},
+        {
+            "age": 58,
+            "gender": "M",
+            "name": "Steve Carrell"},
+        {
+            "age": 41,
+            "gender": "F",
+            "name": "Scarlet  Johansson"},
+        {
+            "age": 51,
+            "gender": "F",
+            "name": "Viola Davis"
         }
     ]
     for item in movies:
