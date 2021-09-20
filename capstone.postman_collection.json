@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "eabc8bc9-f3c3-48af-afe6-14192c1f8ca2",
+		"name": "udacity-fsnd-capstone-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMDIwMTUyMCwiZXhwIjoxNjMwMjg3OTIwLCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.NncE9PLAGT1t0hvoZTKqeKqEYwe8SgbV-5KN-D61CNMMt4k16Dkw-nVi_0V0VzxnI3dFgRzNFZ-XnbFeej_lV583pGURGYjr8n362NI7AeumnC8ONO7na0rAgSzx-IrQ-eE9ANcNjcvOCBq_S2e6KBHbDNJLQ19kC9AhHOA6QmVzg_fmyDUkWOiVybOzaj6Zn2UaDnviRYRINWaL_jR-_PqrNCP3k6XcxA5p38y73tXAqj2TWHqGw99oQLyRBrPH2n8PQc5HC3HSFn-ZEPJUYhK0gOnBApTqADVstGSrahkgKG3pVDiyI2hE2FSxB0h4jfxNAgUmcuweeJ8_ajVyhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/movies",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/actors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBmNDc4ZTMxZDUwMDY5ZjYyZWM4IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjEwMzE0MiwiZXhwIjoxNjMyMTg5NTQyLCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.a_dJ0oOrFoHgjcqN-NF-K5Tlu20WA7UfVd-guQgVzFNfWczi4SGIDrYWpuhVtSWi4MIKJ9O1LSIr8Frtom5-stLpnF5Qw1_J5ciYwtgInzjOmpNyzRQoKqkSPKzPvecdu80h3la_1NPkBX1NjvHxmUSxfHFSFUJ8P-QRzKykyg83He5Xor89E4y6JPYPVZ_czAaDg2t6TkbJc5zMFZQLBbt9zD2puapqwGhnVqxGJC6D2ablKSfoxHm6lAWtD-X2LBLJe4G7pko6_Pfd63Ykdqw_GsD7AOXCtf6RV3C1NNjRXRl2-8Ch15FqWWdkE-RGnkdR8XIXRqyHXTUwgDy9Kg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/actors",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/movies/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjA5NDA4NSwiZXhwIjoxNjMyMTgwNDg1LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.f1nyea5QX9TB9Wtk1uJVW2d7X0ZsYTKZTBCmUKPR6oM03IBjua8h-lSt0m8u5kXqLYXmyO8Gsrxrm_2oWGr1QlXvJXy5dLpvfVnv3Q_Kp0gWMqnwvsoEWt76kP1SAPsa84WpdhrBHxzinL5wkMutlZJzX7ygq_qNG6x_PKB4y6zDVTbfbldltCEHUJr-GOObh_vA8C4ciWW8nrIPF0Dvujll3_dXDo6jugEzBblbWfuygHbUU2qoEfMAiExtMLHcDOlonYEVuC1fRT2XJ8Axo4BTvh1j7nQU1VzTgqTgB-Hz1sXkozJIXRLnVhxgrT2VQrqoKk6_Z7o0iwxcpUyKZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"IT\",\r\n    \"release_date\": \"2018-07-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/movies/create",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movies",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/actors/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjA5NDA4NSwiZXhwIjoxNjMyMTgwNDg1LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.f1nyea5QX9TB9Wtk1uJVW2d7X0ZsYTKZTBCmUKPR6oM03IBjua8h-lSt0m8u5kXqLYXmyO8Gsrxrm_2oWGr1QlXvJXy5dLpvfVnv3Q_Kp0gWMqnwvsoEWt76kP1SAPsa84WpdhrBHxzinL5wkMutlZJzX7ygq_qNG6x_PKB4y6zDVTbfbldltCEHUJr-GOObh_vA8C4ciWW8nrIPF0Dvujll3_dXDo6jugEzBblbWfuygHbUU2qoEfMAiExtMLHcDOlonYEVuC1fRT2XJ8Axo4BTvh1j7nQU1VzTgqTgB-Hz1sXkozJIXRLnVhxgrT2VQrqoKk6_Z7o0iwxcpUyKZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"John Cena\",\r\n    \"age\": 44,\r\n    \"gender\":\"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/actors/create",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"actors",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/movies/22",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjA5NDA4NSwiZXhwIjoxNjMyMTgwNDg1LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.f1nyea5QX9TB9Wtk1uJVW2d7X0ZsYTKZTBCmUKPR6oM03IBjua8h-lSt0m8u5kXqLYXmyO8Gsrxrm_2oWGr1QlXvJXy5dLpvfVnv3Q_Kp0gWMqnwvsoEWt76kP1SAPsa84WpdhrBHxzinL5wkMutlZJzX7ygq_qNG6x_PKB4y6zDVTbfbldltCEHUJr-GOObh_vA8C4ciWW8nrIPF0Dvujll3_dXDo6jugEzBblbWfuygHbUU2qoEfMAiExtMLHcDOlonYEVuC1fRT2XJ8Axo4BTvh1j7nQU1VzTgqTgB-Hz1sXkozJIXRLnVhxgrT2VQrqoKk6_Z7o0iwxcpUyKZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"I.T\",\r\n    \"release_date\": \"03-03-2018\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/movies/22",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movies",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/actors/23",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjA5NDA4NSwiZXhwIjoxNjMyMTgwNDg1LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.f1nyea5QX9TB9Wtk1uJVW2d7X0ZsYTKZTBCmUKPR6oM03IBjua8h-lSt0m8u5kXqLYXmyO8Gsrxrm_2oWGr1QlXvJXy5dLpvfVnv3Q_Kp0gWMqnwvsoEWt76kP1SAPsa84WpdhrBHxzinL5wkMutlZJzX7ygq_qNG6x_PKB4y6zDVTbfbldltCEHUJr-GOObh_vA8C4ciWW8nrIPF0Dvujll3_dXDo6jugEzBblbWfuygHbUU2qoEfMAiExtMLHcDOlonYEVuC1fRT2XJ8Axo4BTvh1j7nQU1VzTgqTgB-Hz1sXkozJIXRLnVhxgrT2VQrqoKk6_Z7o0iwxcpUyKZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Michael Cera\",\r\n    \"age\": 33,\r\n    \"gender\":\"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/actors/23",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"actors",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/movies/22",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBmNDc4ZTMxZDUwMDY5ZjYyZWM4IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjEwMzE0MiwiZXhwIjoxNjMyMTg5NTQyLCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.a_dJ0oOrFoHgjcqN-NF-K5Tlu20WA7UfVd-guQgVzFNfWczi4SGIDrYWpuhVtSWi4MIKJ9O1LSIr8Frtom5-stLpnF5Qw1_J5ciYwtgInzjOmpNyzRQoKqkSPKzPvecdu80h3la_1NPkBX1NjvHxmUSxfHFSFUJ8P-QRzKykyg83He5Xor89E4y6JPYPVZ_czAaDg2t6TkbJc5zMFZQLBbt9zD2puapqwGhnVqxGJC6D2ablKSfoxHm6lAWtD-X2LBLJe4G7pko6_Pfd63Ykdqw_GsD7AOXCtf6RV3C1NNjRXRl2-8Ch15FqWWdkE-RGnkdR8XIXRqyHXTUwgDy9Kg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/movies/22",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"movies",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://capstone-project-steffaru.herokuapp.com/api/actors/23",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRQVVJiUEVPYTBVZWt4YmE0MVhjayJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5LWNhcHN0b25lMjAyMS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjEwMjBlMzZjNjFmZDcwMDc3ZDA1OWEzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSIsImlhdCI6MTYzMjA5NDA4NSwiZXhwIjoxNjMyMTgwNDg1LCJhenAiOiJTZWxNZ3U5RUdWRVBjNzZCdW9DaWZ1cklkOGxkendFQiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.f1nyea5QX9TB9Wtk1uJVW2d7X0ZsYTKZTBCmUKPR6oM03IBjua8h-lSt0m8u5kXqLYXmyO8Gsrxrm_2oWGr1QlXvJXy5dLpvfVnv3Q_Kp0gWMqnwvsoEWt76kP1SAPsa84WpdhrBHxzinL5wkMutlZJzX7ygq_qNG6x_PKB4y6zDVTbfbldltCEHUJr-GOObh_vA8C4ciWW8nrIPF0Dvujll3_dXDo6jugEzBblbWfuygHbUU2qoEfMAiExtMLHcDOlonYEVuC1fRT2XJ8Axo4BTvh1j7nQU1VzTgqTgB-Hz1sXkozJIXRLnVhxgrT2VQrqoKk6_Z7o0iwxcpUyKZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://capstone-project-steffaru.herokuapp.com/api/actors/23",
+					"protocol": "https",
+					"host": [
+						"capstone-project-steffaru",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"actors",
+						"23"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
