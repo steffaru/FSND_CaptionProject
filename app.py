@@ -40,8 +40,12 @@ def create_app(configName = 'default'):
                 abort(code)
 
             movies = Movie.query.all()
-            formatted_movies = [movie.format() for movie in movies]
-            if len(formatted_movies) == 0:
+            if len(movies)>0:
+                formatted_movies = [movie.format() for movie in movies]
+                if len(formatted_movies) == 0:
+                    code = 404
+                    abort(404)
+            else:
                 code = 404
                 abort(404)
 
