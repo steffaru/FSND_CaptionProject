@@ -45,7 +45,7 @@ def seed():
             "release_date": "2017-09-03",
             "title": "The Leisure Seeker"},
         {
-            "release_date": "-2004-08-07",
+            "release_date": "2004-08-07",
             "title": "Eternal Sunshine of the Spotless Mind"},
         {
             "release_date": "2016-01-29",
