@@ -20,6 +20,36 @@ def setup_db(app):
     db.create_all()
     migrate = Migrate(app, db)
 
+
+def seed():
+    movies = [
+        {
+            "title":"Hellfish",
+            "release_date": "1999-10-01"},
+        {
+            "title":"Batman Returns",
+            "release_date": "1992-10-01"},
+        {
+            "title":"Spiderman",
+            "release_date": "2015-10-01"},
+        {
+            "title":"Thor Ragnarok",
+            "release_date": "2017-10-01"},
+        {
+            "title":"Guardianes de la Galaxia",
+            "release_date": "2019-10-01"},
+        {
+            "title":"Scarlet Witch",
+            "release_date": "2021-10-01"
+        }
+    ]
+    for item in movies:
+        movie = Movie(
+                title=item.title,
+                release_date=item.release_date
+            )
+        movie.insert()    
+
 '''
 Movie
 
