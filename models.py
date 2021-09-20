@@ -45,8 +45,8 @@ def seed():
     ]
     for item in movies:
         movie = Movie(
-                title=item.title,
-                release_date=item.release_date
+                title=item['title'],
+                release_date=item['release_date']
             )
         movie.insert()    
 
