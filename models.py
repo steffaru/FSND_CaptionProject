@@ -44,11 +44,13 @@ def seed():
         }
     ]
     for item in movies:
-        movie = Movie(
-                title=item['title'],
-                release_date=item['release_date']
-            )
-        movie.insert()    
+        movie = Movie.query.filter_by(title=item['title']).first()
+        if movie is None:
+            movie = Movie(
+                    title=item['title'],
+                    release_date=item['release_date']
+                )
+            movie.insert()    
 
 '''
 Movie
